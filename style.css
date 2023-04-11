@@ -26,8 +26,7 @@ overflow:hidden
 
 .searchBox {
   /* overflow: hidden; */
-  background-color: green;
-  background: green;
+
   position: fixed;
   top: 0;
   width: 100%;
