@@ -25,8 +25,8 @@ overflow-x: hidden;
 
 .searchBox {
   /* overflow: hidden; */
-  background-color: red;
-  background: red;
+  background-color: green;
+  background: green;
   position: fixed;
   top: 0;
   width: 100%;
@@ -36,7 +36,7 @@ overflow-x: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-z-index:10;
+z-index:3;
 
 }
 
