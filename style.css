@@ -6,6 +6,7 @@ body {
   justify-content: center;
   margin: 0px;
   margin-top: 20px;
+
 }
 
 .container {
@@ -13,12 +14,16 @@ body {
   height: 90%;
   width: 400px;
   border-radius: 20px;
-  margin-top: 80px;
+
+
+  
+
+
  
 }
 
 .searchBox {
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: rgb(2, 0, 36);
   background: white;
   position: fixed;
