@@ -23,7 +23,7 @@ function addGame(game_name, game_rank, game_img_link) {
     game_img_link +
     `" />';
   <img  style="position: relative;    transform: rotate(5deg);  top:200px; right:10px;  height:100px"src="https://drive.google.com/uc?export=view&id=1sbjGXpJSBWjosQn0ia1ILV2JGAjL2_Xv" alt="" srcset="">
-     <p style="font-size: 22px; position: relative; transform: rotate(5deg);left: 27px;top: 109px;">` +
+     <p style="font-size: 22px; position: relative; transform: rotate(5deg);left: 28px;top: 109px;">` +
     game_name +
     `</p>
      <p style="font-size: 22px; position: relative;top: 80px; text-align: center;">` +

@@ -10,11 +10,11 @@ body {
 
 .container {
   background-color: transparent;
-  height: 99%;
+  height: 90%;
   width: 400px;
   border-radius: 20px;
   margin-top: 80px;
-
+ 
 }
 
 .searchBox {
@@ -78,7 +78,7 @@ body {
 .game_name {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 20px;
-  padding-left: 10px;
+  /* padding-left: 10px; */
   padding-bottom: 10px;
   
 }
