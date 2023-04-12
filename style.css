@@ -69,11 +69,13 @@ z-index:10;
 
 .image {
   height: 225px;
-  width: 20%px;
+  /* width: 20%px; */
   border-radius: 30px;
   margin-top: 20px;
   box-shadow: -3px -3px 9px #aaa9a9a2, 3px 3px 7px rgba(147, 149, 151, 0.671);
   position: absolute;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .view{
@@ -95,6 +97,16 @@ z-index:10;
   transform: rotate(0deg);
 }
 
+
+.disbale_select{
+
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+
+}
 
 
 
