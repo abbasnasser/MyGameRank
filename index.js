@@ -16,7 +16,7 @@ function addGame(game_name, game_rank, game_img_link) {
     <div class='view'>
   <div  style=' margin-bottom: 100px;'><img id="aaaa"  class="image"  loading="lazy"  , src="` +
     game_img_link +
-    `" />';
+    `" />
   <img  style="position: relative;    transform: rotate(5deg);  top:200px; right:10px;  height:100px"src="https://drive.google.com/uc?export=view&id=1sbjGXpJSBWjosQn0ia1ILV2JGAjL2_Xv" alt="" srcset="">
      <p class='disbale_select' style="font-size: 20px; position: relative; transform: rotate(5deg);left: 24px;top: 113px;">` +
     game_name +
@@ -37,7 +37,7 @@ function addGame(game_name, game_rank, game_img_link) {
     <div class='view'>
   <div  style=' margin-bottom: 100px;'><img id="aaaa"  class="image"  loading="lazy"  , src="` +
     game_img_link +
-    `" />';
+    `" />
   <img  style="position: relative;    transform: rotate(5deg);  top:200px; right:10px;  height:100px"src="https://drive.google.com/uc?export=view&id=1sbjGXpJSBWjosQn0ia1ILV2JGAjL2_Xv" alt="" srcset="">
      <p class='disbale_select' style="font-size: 20px; position: relative; transform: rotate(5deg);left: 28px;top: 113px;">` +
     game_name +
