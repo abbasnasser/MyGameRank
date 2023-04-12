@@ -72,12 +72,30 @@ z-index:10;
   width: 20%px;
   border-radius: 30px;
   margin-top: 20px;
- 
   box-shadow: -3px -3px 9px #aaa9a9a2, 3px 3px 7px rgba(147, 149, 151, 0.671);
   position: absolute;
- 
+}
+
+.view{
+  opacity: 0;
+  transition: opacity 1s ease;
+  transition-property: transform ;
+  /* transition-duration: 0.8s; */
+
+  transform: rotate(5deg);
+
+
 
 }
+
+
+
+.aas{
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+
 
 
 

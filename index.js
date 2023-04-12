@@ -17,8 +17,18 @@ textt.style = "font-size: 90px; position: relative;left: 140px;top: 98px;";
 function addGame(game_name, game_rank, game_img_link) {
   let cont = document.getElementById("holder");
 
+  
+  // var img = new Image();
+ 
+  // img.src = game_img_link;
+  // img.id='aaaa'
+  // img.className='image'
+
+
+  // const box =
   const box =
     `
+    <div class='view'>
   <div  style=' margin-bottom: 100px;'><img id="aaaa"  class="image"  loading="lazy"  , src="` +
     game_img_link +
     `" />';
@@ -28,8 +38,10 @@ function addGame(game_name, game_rank, game_img_link) {
     `</p>
      <p style="font-size: 20px; position: relative;top: 90px; text-align: center;">` +
     game_rank +
-    `</p> </div>`;
-
+    `</p> </div>
+    
+    </div>`;
+   
   cont.innerHTML += box;
 }
 
@@ -45,8 +57,9 @@ function search() {
     filterList = main.filter((element) => element[1].includes(search.value));
     list = filterList.slice(0);
     let cont = document.getElementById("holder");
-    cont.innerHTML = "";
+    // cont.innerHTML = "";
     addGamesToPage();
+    loop()
   });
 }
 
@@ -72,6 +85,15 @@ function start() {
       addGamesToPage();
 
       search();
+      loop();
+      window.addEventListener('scroll', function() {
+        loop();
+      
+      });
+      
+      
+
+
     } else {
       console.log("error");
     }
@@ -83,29 +105,35 @@ function start() {
 start();
 
 
+function loop() {
+  var elementsToShow = document.querySelectorAll('.view');
 
+  elementsToShow.forEach(function (element) {
+    if (isElementInViewport(element)) {
+      element.classList.add('aas');
+    } else {
+      element.classList.remove('aas');
+    }
+  });
 
-window.addEventListener('resize', function() {
-	
-	var viewport_width = window.innerWidth;
-  var x=this.document.getElementById('holder')
+  scroll(loop);
+}
 
-  if (viewport_width >501){
-   
-   
-    // x.style.height='1000px'
-  //  x.style.float='left';
-  //  x.style.width='400px';
-  //  x.style.width='800px'
-   
-
+function isElementInViewport(el) {
+  // special bonus for those using jQuery
+  if (typeof jQuery === "function" && el instanceof jQuery) {
+    el = el[0];
   }
+  var rect = el.getBoundingClientRect();
+  return (
+    (rect.top <= 0
+      && rect.bottom >= 0)
+    ||
+    (rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight))
+    ||
+    (rect.top >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
+  );
+}
 
-  else if(viewport_width <501){
-    // x.style.height='225px'
-    // x.style.width='400px'
-
-
-
-  }
-});
