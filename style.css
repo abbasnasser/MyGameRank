@@ -6,6 +6,9 @@ body {
   justify-content: center;
   margin: 0px;
   margin-top: 20px;
+  overflow-x: hidden;
+
+
 
 
 }
@@ -15,6 +18,8 @@ body {
   height: 90%;
   width: 400px;
   border-radius: 20px;
+
+
   
 
  
@@ -35,6 +40,7 @@ background-color:white;
   align-items: center;
   justify-content: center;
 z-index:10;
+
 
 }
 

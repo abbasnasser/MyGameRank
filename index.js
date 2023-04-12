@@ -4,21 +4,35 @@ var main = [];
 let body = document.getElementById("b");
 body.innerHTML += '<div class="loader"></div>';
 
-const newNode = document.createElement("img");
-newNode.id = "sssd";
 
-var image = new Image();
-image.src =
-  "https://drive.google.com/uc?export=view&id=1sbjGXpJSBWjosQn0ia1ILV2JGAjL2_Xv";
-image.style = "height:100px position: absolute;";
-var textt = new Text();
-textt.style = "font-size: 90px; position: relative;left: 140px;top: 98px;";
 
 function addGame(game_name, game_rank, game_img_link) {
   let cont = document.getElementById("holder");
 
+  if(game_name>9){
+    console.log('ss');
+    const box =
+    `
+    <div class='view'>
+  <div  style=' margin-bottom: 100px;'><img id="aaaa"  class="image"  loading="lazy"  , src="` +
+    game_img_link +
+    `" />';
+  <img  style="position: relative;    transform: rotate(5deg);  top:200px; right:10px;  height:100px"src="https://drive.google.com/uc?export=view&id=1sbjGXpJSBWjosQn0ia1ILV2JGAjL2_Xv" alt="" srcset="">
+     <p class='disbale_select' style="font-size: 20px; position: relative; transform: rotate(5deg);left: 24px;top: 113px;">` +
+    game_name +
+    `</p>
+     <p  class='disbale_select'style="font-size: 20px; position: relative;top: 90px; text-align: center;">` +
+    game_rank +
+    `</p> </div>
+    
+    </div>`;
+   
+  cont.innerHTML += box;
+    
+  }
+  else{
 
-  const box =
+    const box =
     `
     <div class='view'>
   <div  style=' margin-bottom: 100px;'><img id="aaaa"  class="image"  loading="lazy"  , src="` +
@@ -35,6 +49,10 @@ function addGame(game_name, game_rank, game_img_link) {
     </div>`;
    
   cont.innerHTML += box;
+  }
+
+
+  
 }
 
 function addGamesToPage() {
