@@ -19,7 +19,7 @@ function addGame(game_name, game_rank, game_img_link) {
 
   const box =
     `
-  <div style=' margin-bottom: 100px;'><img  class="image"  loading="lazy"  , src="` +
+  <div  style=' margin-bottom: 100px;'><img id="aaaa"  class="image"  loading="lazy"  , src="` +
     game_img_link +
     `" />';
   <img  style="position: relative;    transform: rotate(5deg);  top:200px; right:10px;  height:100px"src="https://drive.google.com/uc?export=view&id=1sbjGXpJSBWjosQn0ia1ILV2JGAjL2_Xv" alt="" srcset="">
@@ -82,3 +82,30 @@ function start() {
 
 start();
 
+
+
+
+window.addEventListener('resize', function() {
+	
+	var viewport_width = window.innerWidth;
+  var x=this.document.getElementById('holder')
+
+  if (viewport_width >501){
+   
+   
+    // x.style.height='1000px'
+  //  x.style.float='left';
+  //  x.style.width='400px';
+  //  x.style.width='800px'
+   
+
+  }
+
+  else if(viewport_width <501){
+    // x.style.height='225px'
+    // x.style.width='400px'
+
+
+
+  }
+});
