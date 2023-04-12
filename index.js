@@ -10,7 +10,7 @@ function addGame(game_name, game_rank, game_img_link) {
   let cont = document.getElementById("holder");
 
   if(game_name>9){
-    
+    console.log('ss');
     const box =
     `
     <div class='view'>
@@ -18,7 +18,7 @@ function addGame(game_name, game_rank, game_img_link) {
     game_img_link +
     `" />
   <img  style="position: relative;    transform: rotate(5deg);  top:200px; right:10px;  height:100px"src="https://drive.google.com/uc?export=view&id=1sbjGXpJSBWjosQn0ia1ILV2JGAjL2_Xv" alt="" srcset="">
-     <p class='disbale_select' style="font-size: 20px; position: relative; transform: rotate(5deg);left: 12px;top: 113px;">` +
+     <p class='disbale_select' style="font-size: 20px; position: relative; transform: rotate(5deg);left: 13px;top: 113px;">` +
     game_name +
     `</p>
      <p  class='disbale_select'style="font-size: 20px; position: relative;top: 90px; text-align: center;">` +
@@ -64,7 +64,7 @@ function addGamesToPage() {
 function search() {
   var search = document.getElementById("search");
   search.addEventListener("input", (event) => {
-    filterList = main.filter((element) => element[1].includes(search.value));
+    filterList = main.filter((element) => element[1].toLowerCase().includes(search.value.toLowerCase()));
     list = filterList.slice(0);
     let cont = document.getElementById("holder");
     cont.innerHTML = "";
