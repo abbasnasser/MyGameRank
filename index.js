@@ -1,75 +1,82 @@
-var list = [];
-var main = [];
-
-let body = document.getElementById("b");
-body.innerHTML += '<div class="loader"></div>';
+let x = document.getElementById("body");
 
 
+let gallery = document.createElement("div");
+gallery.id = "gallery";
+gallery.className='gallery'
+x.appendChild(gallery)
 
-function addGame(game_name, game_rank, game_img_link) {
-  let cont = document.getElementById("holder");
+let ggg = document.getElementById("gallery");
+ggg.innerHTML += '<div class="loader"></div>';
 
-  if(game_name>9){
-    console.log('ss');
-    const box =
-    `
-    <div class='view'>
-  <div  style=' margin-bottom: 100px;'><img id="aaaa"  class="image"  loading="lazy"  , src="` +
-    game_img_link +
-    `" />
-  <img  style="position: relative;    transform: rotate(5deg);  top:200px; right:10px;  height:100px"src="https://drive.google.com/uc?export=view&id=1sbjGXpJSBWjosQn0ia1ILV2JGAjL2_Xv" alt="" srcset="">
-     <p class='disbale_select' style="font-size: 20px; position: relative; transform: rotate(5deg);left: 13px;top: 113px;">` +
-    game_name +
-    `</p>
-     <p  class='disbale_select'style="font-size: 20px; position: relative;top: 90px; text-align: center;">` +
-    game_rank +
-    `</p> </div>
-    
-    </div>`;
+
+function addgame(imgsrc, gamenametxt, gameranktxt) {
+  gg=document.getElementById('gallery')
+    // console.log(gamenametxt.length)
+    console.log(gameranktxt)
    
-  cont.innerHTML += box;
-    
+  let container = document.createElement("div");
+  container.id = "container";
+  container.className = "container";
+
+  let gameimg = new Image();
+
+  gameimg.src = imgsrc;
+  gameimg.classList = "gameimg";
+
+  let gamemedal = new Image();
+  gamemedal.src = "./medal.png";
+  gamemedal.classList = "medal";
+
+  let gamename = document.createElement("div");
+  gamename.textContent = gamenametxt;
+  gamename.className = "gamename";
+
+  let gamerank = document.createElement("div");
+  gamerank.textContent = gameranktxt;
+  gamerank.className = "gamerank";
+  let gamrankleftvalue='0px'
+
+  if(gameranktxt>9){
+    gamrankleftvalue='25px'
+
   }
   else{
-
-    const box =
-    `
-    <div class='view'>
-  <div  style=' margin-bottom: 100px;'><img id="aaaa"  class="image"  loading="lazy"  , src="` +
-    game_img_link +
-    `" />
-  <img  style="position: relative;    transform: rotate(5deg);  top:200px; right:10px;  height:100px"src="https://drive.google.com/uc?export=view&id=1sbjGXpJSBWjosQn0ia1ILV2JGAjL2_Xv" alt="" srcset="">
-     <p class='disbale_select' style="font-size: 20px; position: relative; transform: rotate(5deg);left: 18px;top: 113px;">` +
-    game_name +
-    `</p>
-     <p  class='disbale_select'style="font-size: 20px; position: relative;top: 90px; text-align: center;">` +
-    game_rank +
-    `</p> </div>
-    
-    </div>`;
-   
-  cont.innerHTML += box;
+    gamrankleftvalue='31px'
+ 
   }
 
-
   
+
+  gamerank.style.left=''+gamrankleftvalue+''
+
+  container.appendChild(gameimg);
+  container.appendChild(gamemedal);
+  container.appendChild(gamename);
+  container.appendChild(gamerank);
+  gg.appendChild(container);
 }
 
 function addGamesToPage() {
   for (var i = 0; i < list.length; i++) {
-    addGame(list[i][0], list[i][1], list[i][2]);
+    addgame(list[i][2], list[i][1], list[i][0]);
   }
+ 
 }
 
 function search() {
   var search = document.getElementById("search");
   search.addEventListener("input", (event) => {
-    filterList = main.filter((element) => element[1].toLowerCase().includes(search.value.toLowerCase()));
+    filterList = main.filter((element) =>
+      element[1].toLowerCase().includes(search.value.toLowerCase())
+    );
     list = filterList.slice(0);
-    let cont = document.getElementById("holder");
-    cont.innerHTML = "";
+    gg=document.getElementById('gallery')
+    gg.innerHTML = ''
+
+   
     addGamesToPage();
-    loop()
+    loop();
   });
 }
 
@@ -83,27 +90,23 @@ function start() {
   request.onload = function () {
     var data = JSON.parse(this.response);
     if (request.status >= 200 && request.status < 400) {
-      body.innerHTML = "";
       body.innerHTML +=
         ' <div class="searchBox" ><input id="search" class="search" placeholder="Search" type="search" /></div>';
-      body.innerHTML += '<div id="holder"></div>';
-      var holder = document.getElementById("holder");
-      holder.className = "container";
+
       main = data.slice(0);
       main.shift();
       list = main.slice(0);
+      let ggg = document.getElementById("gallery");
+      ggg.innerHTML=''
+
+
       addGamesToPage();
 
       search();
-      loop();
-      window.addEventListener('scroll', function() {
+    loop();
+      window.addEventListener("scroll", function () {
         loop();
-      
       });
-      
-      
-
-
     } else {
       console.log("error");
     }
@@ -115,35 +118,37 @@ function start() {
 start();
 
 
+
+
 function loop() {
-  var elementsToShow = document.querySelectorAll('.view');
-
-  elementsToShow.forEach(function (element) {
-    if (isElementInViewport(element)) {
-      element.classList.add('aas');
-    } else {
-      element.classList.remove('aas');
-    }
-  });
-
-  scroll(loop);
-}
-
-function isElementInViewport(el) {
-  // special bonus for those using jQuery
-  if (typeof jQuery === "function" && el instanceof jQuery) {
-    el = el[0];
+    var elementsToShow = document.querySelectorAll('.container');
+  
+    elementsToShow.forEach(function (element) {
+      if (isElementInViewport(element)) {
+        element.classList.add('aas');
+      } else {
+        element.classList.remove('aas');
+      }
+    });
+  
+    scroll(loop);
   }
-  var rect = el.getBoundingClientRect();
-  return (
-    (rect.top <= 0
-      && rect.bottom >= 0)
-    ||
-    (rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.top <= (window.innerHeight || document.documentElement.clientHeight))
-    ||
-    (rect.top >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
-  );
-}
-
+  
+  function isElementInViewport(el) {
+    // special bonus for those using jQuery
+    if (typeof jQuery === "function" && el instanceof jQuery) {
+      el = el[0];
+    }
+    var rect = el.getBoundingClientRect();
+    return (
+      (rect.top <= 0
+        && rect.bottom >= 0)
+      ||
+      (rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight))
+      ||
+      (rect.top >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
+    );
+  }
+  
