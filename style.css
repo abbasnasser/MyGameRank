@@ -3,6 +3,31 @@ body {
 
 }
 
+.loading {
+  animation: blink 0.5s;
+  animation-iteration-count: infinite;
+  width: 100px;
+  height: 100px;
+  
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .tempCenter {
   display: flex;
   align-items: center;
@@ -76,8 +101,8 @@ body {
 }
 
 .gamerank {
-  top: 3px;
-  left: -5px;
+  top: 4px;
+  left: -6px;
   user-select: none;
   display: flex;
   align-items: center;
@@ -172,31 +197,6 @@ body {
 
   body {
     padding-top: 50px;
-  }
-}
-
-.loading {
-  animation: blink 0.5s;
-  animation-iteration-count: infinite;
-  width: 100px;
-  height: 100px;
-  
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
   }
 }
 
