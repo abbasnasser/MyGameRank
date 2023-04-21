@@ -33,6 +33,11 @@ body {
   transform: rotate(5deg);
 }
 
+.showContainer {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
 .gameimg {
   border-radius: 30px;
   position: relative;
@@ -53,21 +58,21 @@ body {
 .medal {
   left: 0px;
   position: absolute;
-  width: 70px;
+  width: 60px;
   transform: rotate(5deg);
 }
 
 .gamename {
   top: 0px;
-  font-size: 20px;
+  font-size: 17px;
   position: relative;
   user-select: none;
   text-align: center;
 }
 
 .gamerank {
-  top: 0px;
-  left: 0px;
+  top: 3px;
+  left: -5px;
   user-select: none;
   display: flex;
   align-items: center;
@@ -75,16 +80,10 @@ body {
   height: 55px;
   width: 75px;
   background-color: transparent;
-  font-size: 20px;
+  font-size: 17px;
   position: absolute;
-  /* left: 30px; */
   z-index: 3;
   transform: rotate(5deg);
-}
-
-.aas {
-  opacity: 1;
-  transform: rotate(0deg);
 }
 
 .searchBox {
@@ -143,7 +142,6 @@ body {
     width: 50%;
     margin-top: 0px;
   }
-
   body {
     padding-top: 100px;
   }
@@ -155,7 +153,6 @@ body {
     width: 50%;
     margin-top: 0px;
   }
-
   body {
     padding-top: 100px;
   }
@@ -170,35 +167,6 @@ body {
 
   body {
     padding-top: 50px;
-  }
-}
-
-.loader {
-  border: 2px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 2px solid rgba(255, 0, 251, 0.671);
-  width: 60px;
-  height: 60px;
-  -webkit-animation: spin 2s linear infinite; /* Safari */
-  animation: spin 500ms linear infinite;
-}
-
-/* Safari */
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
 
@@ -225,3 +193,5 @@ body {
     opacity: 0;
   }
 }
+
+

@@ -4,17 +4,11 @@ gallery.id = "gallery";
 gallery.className = "gallery";
 x.classList.add('tempCenter')
 x.appendChild(gallery);
-let ggg = document.getElementById("gallery");
-
-
-
-
-
-
+let gallerydoc = document.getElementById("gallery");
 let loadimg = new Image();
 loadimg.src = 'loadinglogo.jpg';
 loadimg.classList = "loading";
-ggg.appendChild(loadimg)
+gallerydoc.appendChild(loadimg)
 
 
 let imgss = [];
@@ -30,31 +24,25 @@ function addgame(imgsrc, gamenametxt, gameranktxt) {
   let container = document.createElement("div");
   container.id = "container";
   container.className = "container";
-
   let container2r = document.createElement("div");
   container2r.id = "container2";
   container2r.className = "container_rank_name";
-
   let gamemedal = new Image();
   gamemedal.src = "medal.png";
   gamemedal.classList = "medal";
-
   let gamename = document.createElement("div");
   gamename.textContent = gamenametxt;
+  console.log(gamenametxt.length)
+  gameNameWithoutSpaces = gamenametxt.replace(/\s/g, '');
   gamename.className = "gamename";
-
   let gamerank = document.createElement("div");
   gamerank.textContent = gameranktxt;
   gamerank.className = "gamerank";
-
   container.appendChild(imgsrc);
-
+  container2r.appendChild(gamename);
   container2r.appendChild(gamemedal);
   container2r.appendChild(gamerank);
-  container2r.appendChild(gamename);
-
   container.appendChild(container2r);
-
   imgss.push([gamenametxt, container]);
   spare_ss.push([gamenametxt, container]);
 }
@@ -68,7 +56,6 @@ function addGamesToPage() {
 
 function search() {
   var search = document.getElementById("search");
-
   search.addEventListener("input", (event) => {
     filterList = spare_ss.filter((element) =>
       element[0].toLowerCase().includes(search.value.toLowerCase())
@@ -125,12 +112,11 @@ start();
 
 function loop() {
   var elementsToShow = document.querySelectorAll(".container");
-
   elementsToShow.forEach(function (element) {
     if (isElementInViewport(element)) {
-      element.classList.add("aas");
+      element.classList.add("showContainer");
     } else {
-      element.classList.remove("aas");
+      element.classList.remove("showContainer");
     }
   });
 
