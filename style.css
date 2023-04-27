@@ -8,7 +8,6 @@ body {
   animation-iteration-count: infinite;
   width: 100px;
   height: 100px;
-  
   margin: 0;
   position: absolute;
   top: 50%;
@@ -35,7 +34,7 @@ body {
   background-color: transparent;
 }
 
-.gallery {
+.search_container{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -43,77 +42,7 @@ body {
   margin: 0px;
   background-color: transparent;
   padding-top: 40px;
-}
 
-.container {
-  width: 400px;
-  height: 300px;
-  background-color: transparent;
-  border-radius: 30px;
-  margin-top: 30px;
-  margin-left: 15px;
-  margin-right: 15px;
-  opacity: 0;
-  transition: opacity 1s ease;
-  transition-property: transform;
-  transform: rotate(5deg);
-  
-}
-
-.showContainer {
-  opacity: 1;
-  transform: rotate(0deg);
-}
-
-.gameimg {
-  border-radius: 30px;
-  position: relative;
-  width: 100%;
-  box-shadow: -3px -3px 9px #aaa9a9a2, 3px 3px 7px rgba(147, 149, 151, 0.671);
-
-}
-
-.container_rank_name {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  height: 100px;
-  width: 100%;
-  position: relative;
-  top: -30px;
-}
-
-.medal {
-  left: 0px;
-  position: absolute;
-  width: 60px;
-  transform: rotate(5deg);
-  
-}
-
-.gamename {
-  top: 0px;
-  font-size: 17px;
-  position: relative;
-  user-select: none;
-  text-align: center;
-}
-
-.gamerank {
-  top: 4px;
-  left: -6px;
-  user-select: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 55px;
-  width: 75px;
-  background-color: transparent;
-  font-size: 17px;
-  position: absolute;
-  z-index: 3;
-  transform: rotate(5deg);
 }
 
 .searchBox {
@@ -147,10 +76,128 @@ body {
   border-color: rgba(255, 0, 251, 0.416);
 }
 
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  background-color: transparent;
+  padding-top: 50px;
+}
+
+.container {
+  width: 400px;
+  max-width: 400px;
+  height: 230px;
+  background-color: transparent;
+  border-radius: 30px;
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 5%;
+  opacity: 0;
+  transition: opacity 1s ease;
+  transition-property: transform;
+  transform: rotate(5deg);
+  
+}
+
+
+
+.showContainer {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.gameimg {
+  border-radius: 30px;
+  position: relative;
+  width: 100%;
+  box-shadow: -3px -3px 9px #aaa9a9a2, 3px 3px 7px rgba(147, 149, 151, 0.671);
+
+}
+
+.container_rank_name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  height: 100px;
+  width: 100%;
+  position: relative;
+  top: -50px;
+ 
+}
+
+.medal {
+  left: 0px;
+  position: absolute;
+  width: 60px;
+  transform: rotate(5deg);
+  
+}
+
+.gamename {
+  /* top: 0px; */
+  font-size: 17px;
+  position: relative;
+  user-select: none;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.gamerank {
+  top: 4px;
+  left: -6px;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 55px;
+  width: 75px;
+  background-color: transparent;
+  font-size: 17px;
+  position: absolute;
+  z-index: 3;
+  transform: rotate(5deg);
+}
+
+
 @media screen and (max-width: 300px) {
   .container {
     flex: 60%;
     width: 50%;
+    margin-bottom: -20%;
+  
+  }
+  .gallery{
+    padding-top: 0px;
+  }
+  body{
+    padding-top: 70px;
+  }
+}
+
+
+
+
+
+@media screen and (min-width: 430px) {
+  .container {
+    flex: 60%;
+    width: 50%;
+    margin-top: 0px;
+    margin-bottom: 10%;
+     
+  }
+  .gallery{
+    padding-top: 0px;
+   
+  }
+
+  body {
+    padding-top: 60px;
   }
 }
 
@@ -159,10 +206,27 @@ body {
     flex: 30%;
     width: 50%;
     margin-top: 0px;
+    margin-bottom: 1%;
+     
+  }
+  .gallery{
+    padding-top: 0px;
   }
 
   body {
-    padding-top: 100px;
+    padding-top: 70px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .container {
+    flex: 25%;
+    width: 50%;
+    margin-top: 0px;
+    margin-bottom: -5%;
+  }
+  body {
+    padding-top: 70px;
   }
 }
 
@@ -171,9 +235,35 @@ body {
     flex: 25%;
     width: 50%;
     margin-top: 0px;
+    margin-bottom: -5%;
   }
   body {
-    padding-top: 100px;
+    padding-top: 70px;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .container {
+    flex: 25%;
+    width: 50%;
+    margin-top: 0px;
+    margin-bottom: 0%;
+  }
+  body {
+    padding-top: 70px;
+  }
+}
+
+
+@media screen and (min-width: 1000px) {
+  .container {
+    flex: 25%;
+    width: 50%;
+    margin-top: 0px;
+    margin-bottom: 2%;
+  }
+  body {
+    padding-top: 70px;
   }
 }
 
@@ -181,22 +271,24 @@ body {
   .container {
     flex: 20%;
     width: 50%;
-    margin-top: 0px;
+    margin-top: 60px;
+    margin-bottom: -5%;
   }
   body {
-    padding-top: 100px;
+    padding-top: 10px;
   }
 }
 
-@media screen and (min-width: 1570px) {
+@media screen and (min-width: 1300px) {
   .container {
     flex: 20%;
     width: 50%;
     margin-top: 60px;
+    margin-bottom: 1%;
   }
 
   body {
-    padding-top: 50px;
+    padding-top: 10px;
   }
 }
 
