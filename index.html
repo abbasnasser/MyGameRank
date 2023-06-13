@@ -10,12 +10,20 @@
   <body id="b">
     <div class="search_box">
       <input
+        onkeyup="changeFunc()"
+        onended="changeFunc()"
+        inputmode=""
+        onsearch="changeFunc()"
         list="suggestions"
         id="search"
         class="search"
         type="search"
         placeholder="Search" />
-      <datalist id="suggestions"> </datalist>
+      <datalist id="suggestions">
+        <a href="www.google.com"
+          ><option value="vaaas" onsubmit="changeFunc()"></option
+        ></a>
+      </datalist>
     </div>
     <div id="gallery" class="gallery_style"></div>
   </body>

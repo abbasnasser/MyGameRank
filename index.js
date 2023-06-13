@@ -23,7 +23,7 @@ function getData() {
       var data = JSON.parse(this.response);
       if (request.status >= 200 && request.status < 400) {
         listOfdata = data;
-        search();
+
         var body = document.getElementById("b");
         var loading = document.getElementById("loading");
         body.classList.remove("temp_body");
@@ -101,9 +101,7 @@ function newCard(imglink, rank, gamename, index) {
       var gal = document.getElementById(index + "img");
       var removeImage = document.getElementById(index);
       var rank_div_get = document.getElementById(index + "rank_div");
-
       gal.removeChild(removeImage);
-
       gal.appendChild(main_image);
       empty.appendChild(medal);
       empty.appendChild(number);
@@ -115,25 +113,26 @@ function newCard(imglink, rank, gamename, index) {
   }
 }
 
-function search() {
+function changeFunc() {
   var search = document.getElementById("search");
-  search.addEventListener("input", (event) => {
-    var vla = search.value.toLowerCase();
-    for (i = 0; i < listOfdata.length; i++) {
-      if (vla == listOfdata[i][1].toLowerCase()) {
-        var tt = listOfdata[i][0] - 1;
-        var location = "#" + tt + "roll";
-        console.log(location);
+  var vla = search.value.toLowerCase();
 
-        window.location.hash = location;
-      }
+  for (i = 0; i < listOfdata.length; i++) {
+    if (vla == listOfdata[i][1].toLowerCase()) {
+      console.log(vla);
+      var tt = listOfdata[i][0];
+      var location = "#" + tt + "roll";
+
+      document.location.href = location;
+      break;
     }
-  });
+  }
 }
 
 function generateSuggestion_for_Search(word) {
   var suggestions = document.getElementById("suggestions");
   var option = document.createElement("option");
+  option.id = word;
   var atrib = document.createElement("a");
   option.value = word;
   suggestions.appendChild(option);
