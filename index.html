@@ -2,14 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0 , user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MyGameRank</title>
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body id="body"></body>
+  <body id="b">
+    <div class="search_box">
+      <input
+        list="suggestions"
+        id="search"
+        class="search"
+        type="search"
+        placeholder="Search" />
+      <datalist id="suggestions"> </datalist>
+    </div>
+    <div id="gallery" class="gallery_style"></div>
+  </body>
+
   <script src="./index.js"></script>
 </html>

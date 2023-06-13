@@ -1,51 +1,22 @@
-body {
-  overflow-x: hidden;
-
+html {
+  scroll-behavior: smooth;
 }
-
-.loading {
-  animation: blink 0.5s;
-  animation-iteration-count: infinite;
-  width: 100px;
-  height: 100px;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.tempCenter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-}
-
-.search_container{
+.temp_body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin: 0px;
-  background-color: transparent;
-  padding-top: 40px;
-
+  height: 70vh;
 }
 
-.searchBox {
+.loading {
+  width: 15vh;
+
+  border-radius: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.search_box {
   background-color: white;
   position: fixed;
   top: 0;
@@ -59,7 +30,7 @@ body {
 }
 
 .search {
-  visibility: visible;
+  visibility: hidden;
   background-color: white;
   height: 30px;
   width: 300px;
@@ -76,220 +47,70 @@ body {
   border-color: rgba(255, 0, 251, 0.416);
 }
 
-.gallery {
+.gallery_style {
+  padding-top: 70px;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
-  margin: 0px;
-  background-color: transparent;
-  padding-top: 50px;
-}
-
-.container {
-  width: 400px;
-  max-width: 400px;
-  height: 230px;
-  background-color: transparent;
-  border-radius: 30px;
-  margin-top: 10px;
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-bottom: 5%;
-  opacity: 0;
-  transition: opacity 1s ease;
-  transition-property: transform;
-  transform: rotate(5deg);
-  
-}
-
-
-
-.showContainer {
-  opacity: 1;
-  transform: rotate(0deg);
-}
-
-.gameimg {
-  border-radius: 30px;
-  position: relative;
+  align-items: center;
   width: 100%;
-  box-shadow: -3px -3px 9px #aaa9a9a2, 3px 3px 7px rgba(147, 149, 151, 0.671);
-
+  background-color: transparent;
 }
 
-.container_rank_name {
+.card_container {
+  margin-bottom: 30px;
+}
+
+.image {
+  width: 95%;
+  max-width: 500px;
+  min-width: 200px;
+  border-radius: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.skeleton_form {
+  width: 95%;
+  max-width: 480px;
+  height: 245px;
+  background-color: grey;
+
+  min-width: 200px;
+  border-radius: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.rank_div {
+  width: 95%;
+  height: 50px;
+  max-width: 500px;
+  min-width: 200px;
+  border-radius: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  height: 100px;
-  width: 100%;
-  position: relative;
-  top: -50px;
- 
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: start;
 }
 
 .medal {
-  left: 0px;
-  position: absolute;
-  width: 60px;
-  transform: rotate(5deg);
-  
+  width: 100%;
+  max-width: 80px;
+  min-width: 50px;
+  margin-top: -50px;
 }
 
-.gamename {
-  /* top: 0px; */
-  font-size: 17px;
-  position: relative;
-  user-select: none;
-  text-align: center;
-  margin-top: 30px;
-}
-
-.gamerank {
-  top: 4px;
-  left: -6px;
-  user-select: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 55px;
-  width: 75px;
+.number {
   background-color: transparent;
-  font-size: 17px;
-  position: absolute;
-  z-index: 3;
-  transform: rotate(5deg);
+  margin-top: -102px;
+  text-align: center;
 }
-
-
-@media screen and (max-width: 300px) {
-  .container {
-    flex: 60%;
-    width: 50%;
-    margin-bottom: -20%;
-  
-  }
-  .gallery{
-    padding-top: 0px;
-  }
-  body{
-    padding-top: 70px;
-  }
+.game_name {
+  width: 100%;
+  margin-top: 5px;
+  text-align: center;
+  font-size: 22px;
 }
-
-
-
-
-
-@media screen and (min-width: 430px) {
-  .container {
-    flex: 60%;
-    width: 50%;
-    margin-top: 0px;
-    margin-bottom: 10%;
-     
-  }
-  .gallery{
-    padding-top: 0px;
-   
-  }
-
-  body {
-    padding-top: 60px;
-  }
-}
-
-@media screen and (min-width: 640px) {
-  .container {
-    flex: 30%;
-    width: 50%;
-    margin-top: 0px;
-    margin-bottom: 1%;
-     
-  }
-  .gallery{
-    padding-top: 0px;
-  }
-
-  body {
-    padding-top: 70px;
-  }
-}
-
-@media screen and (min-width: 750px) {
-  .container {
-    flex: 25%;
-    width: 50%;
-    margin-top: 0px;
-    margin-bottom: -5%;
-  }
-  body {
-    padding-top: 70px;
-  }
-}
-
-@media screen and (min-width: 770px) {
-  .container {
-    flex: 25%;
-    width: 50%;
-    margin-top: 0px;
-    margin-bottom: -5%;
-  }
-  body {
-    padding-top: 70px;
-  }
-}
-
-@media screen and (min-width: 850px) {
-  .container {
-    flex: 25%;
-    width: 50%;
-    margin-top: 0px;
-    margin-bottom: 0%;
-  }
-  body {
-    padding-top: 70px;
-  }
-}
-
-
-@media screen and (min-width: 1000px) {
-  .container {
-    flex: 25%;
-    width: 50%;
-    margin-top: 0px;
-    margin-bottom: 2%;
-  }
-  body {
-    padding-top: 70px;
-  }
-}
-
-@media screen and (min-width: 1150px) {
-  .container {
-    flex: 20%;
-    width: 50%;
-    margin-top: 60px;
-    margin-bottom: -5%;
-  }
-  body {
-    padding-top: 10px;
-  }
-}
-
-@media screen and (min-width: 1300px) {
-  .container {
-    flex: 20%;
-    width: 50%;
-    margin-top: 60px;
-    margin-bottom: 1%;
-  }
-
-  body {
-    padding-top: 10px;
-  }
-}
-
-
